@@ -1,0 +1,11 @@
+# env
+*.env
+
+# packages
+.venv
+
+# local development
+*.ipynb
+
+# cache
+*.pyc
