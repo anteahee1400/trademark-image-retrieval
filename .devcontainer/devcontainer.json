@@ -6,7 +6,8 @@
     "codespaces": {
       "openFiles": [
         "README.md",
-        "Hello.py"
+        "image_search_web.py",
+        "text_search_web.py"
       ]
     },
     "vscode": {
@@ -19,15 +20,19 @@
   },
   "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user streamlit; echo '✅ Packages installed and Requirements met'",
   "postAttachCommand": {
-    "server": "streamlit run Hello.py --server.enableCORS false --server.enableXsrfProtection false"
+    "server": "streamlit run image_search_web.py --server.enableCORS false --server.enableXsrfProtection false"
   },
   "portsAttributes": {
     "8501": {
       "label": "Application",
       "onAutoForward": "openPreview"
+    },
+    "8502": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
     }
   },
   "forwardPorts": [
-    8501
+    8501, 8502
   ]
 }

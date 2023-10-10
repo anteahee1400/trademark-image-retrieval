@@ -1,9 +1,7 @@
 import requests
 import aiohttp
-import asyncio
 
 from src.entity import Trademark
-from src.util import batchfy
 
 
 def search_text(
@@ -30,6 +28,8 @@ def search_text(
             register_status=r["registerStatus"],
             tm_division_code=r["tmDivisionCode"],
             image_url=r["imageUrl"],
+            product_types=r.get("productTypes"),
+            similar_group_codes=r.get("similarGroupCodes"),
         )
         trademarks.append(trademark)
 
@@ -60,6 +60,8 @@ async def search_text_async(
             register_status=r["registerStatus"],
             tm_division_code=r["tmDivisionCode"],
             image_url=r["imageUrl"],
+            product_types=r.get("productTypes"),
+            similar_group_codes=r.get("similarGroupCodes"),
         )
         trademarks.append(trademark)
 
@@ -90,6 +92,8 @@ def search_image(
             register_status=r["registerStatus"],
             tm_division_code=r["tmDivisionCode"],
             image_url=r["imageUrl"],
+            product_types=r.get("productTypes"),
+            similar_group_codes=r.get("similarGroupCodes"),
         )
         trademarks.append(trademark)
 
@@ -122,6 +126,8 @@ async def search_image_async(
             register_status=r["registerStatus"],
             tm_division_code=r["tmDivisionCode"],
             image_url=r["imageUrl"],
+            product_types=r.get("productTypes"),
+            similar_group_codes=r.get("similarGroupCodes"),
         )
         trademarks.append(trademark)
 
